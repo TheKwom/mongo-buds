@@ -5,10 +5,10 @@ module.exports = (mongoose) => {
       {
         menu_item: { type: String, required: true },
         image: String,
-        review: String,
-        restaurant: { type: String, required: true },
-        city: { type: String, required: true },
-        state: { type: String, required: true },
+        review_text: String,
+        restaurant_name: { type: String, required: true },
+        restaurant_city: { type: String, required: true },
+        restaurant_state: { type: String, required: true },
         rating: { type: Number, min: 0, max: 5, required: true },
         user: {
           type: mongoose.Schema.Types.ObjectId,
