@@ -11,7 +11,7 @@
     "https"
   ],
   "paths": {
-    "/reviews": {
+    "/api-docs": {
       "get": {
         "description": "",
         "responses": {
@@ -21,9 +21,115 @@
         }
       }
     },
-    "/api-docs": {
+    "/reviews/": {
       "get": {
         "description": "",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "review_id": {
+                  "example": "any"
+                },
+                "menu_item": {
+                  "example": "any"
+                },
+                "image": {
+                  "example": "any"
+                },
+                "review_text": {
+                  "example": "any"
+                },
+                "restaurant_name": {
+                  "example": "any"
+                },
+                "restaurant_city": {
+                  "example": "any"
+                },
+                "restaurant_state": {
+                  "example": "any"
+                },
+                "rating": {
+                  "example": "any"
+                },
+                "user": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/reviews/{id}": {
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/reviews./{id}": {
+      "put": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/reviews./{review_id}": {
+      "delete": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "review_id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "responses": {
           "default": {
             "description": ""
