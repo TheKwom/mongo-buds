@@ -13,14 +13,8 @@ const getReviews = async (req, res) => {
   });
 };
 
-const createReview = (req, res) => {
-  // Validate request
-  if (!req.body.name) {
-    res.status(400).send({ message: "Content cannot be empty!" });
-    return;
-  }
-
-  const review = new Review({
+const createReview = async (req, res) => {
+  const review = {
     review_id: req.body.review_id,
     menu_item: req.body.menu_item,
     image: req.body.image,
@@ -30,22 +24,30 @@ const createReview = (req, res) => {
     restaurant_state: req.body.restaurant_state,
     rating: req.body.rating,
     user: req.body.user,
-  });
+  };
 
-  // save review to the db
-  review
-    .save(review)
-    .then((data) => {
-      res.send(data);
-    })
-    .catch((err) => {
-      res.status(500).send({
-        message: err.message || "An error occurred while creating the review",
-      });
-    });
+  const response = await mongodb
+    .getDb()
+    .db("taste-buds")
+    .collection("reviews")
+    .insertOne(review);
+  if (response.acknowledged) {
+    res.status(201).json(response);
+  } else {
+    res
+      .status(500)
+      .json(respnse.error || "An error occurred while creating the review.");
+  }
 };
+
+const getReviewById = async (req, res) => {};
+const updateReview = async (req, res) => {};
+const deleteReview = async (req, res) => {};
 
 module.exports = {
   getReviews,
   createReview,
+  getReviewById,
+  updateReview,
+  deleteReview,
 };

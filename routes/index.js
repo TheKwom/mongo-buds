@@ -2,7 +2,6 @@ const express = require("express");
 const router = express.Router();
 
 router.use("/", require("./swagger"));
-
-router.get("/reviews", review);
+router.use("/reviews", require("./reviews"));
 
 module.exports = router;
