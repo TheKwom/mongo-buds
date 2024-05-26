@@ -7,3 +7,16 @@
 {
 "menu_item":"Blue Bombshell w/ Vanilla Cream", "image":"", "review_text":"Probably my favorite Mtn. Dew mix!", "restaurant_name":"Sodalicious", "restaurant_city":"Meridian","restaurant_state":"Idaho", "rating":5, "user":""
 }
+
+// LIVE ON RENDER
+
+### Get all reviews GET https://mongo-buds.onrender.com/reviews/
+
+### Create review POST https://mongo-buds.onrender.com/reviews/ HTTP/1.1 content-type: application/json
+
+{
+"menu_item":"Blue Bombshell w/ Vanilla Cream", "image":"", "review_text":"Probably my favorite Mtn. Dew mix!", "restaurant_name":"Sodalicious", "restaurant_city":"Meridian","restaurant_state":"Idaho", "rating":5, "user":""
+}
+
+### Get api-docs GET https://mongo-buds.onrender.com/api-docs/
+
