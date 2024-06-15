@@ -5,9 +5,11 @@
     "description": "Food reviews",
     "version": "1.0.0"
   },
-  "host": "mongo-buds.onrender.com",
+  "host": "cse341-spring24-uwqp.onrender.com",
   "basePath": "/",
-  "schemes": ["https"],
+  "schemes": [
+    "https"
+  ],
   "paths": {
     "/api-docs": {
       "get": {
@@ -21,9 +23,10 @@
     },
     "/reviews/": {
       "get": {
-        "description": "Will GET all user reviews",
-        "operationId": "getReviews",
-        "produces": ["application/json"],
+        "description": "",
+        "produces": [
+          "application/json"
+        ],
         "responses": {
           "200": {
             "description": "OK"
@@ -83,7 +86,9 @@
     "/reviews/{id}": {
       "get": {
         "description": "",
-        "produces": ["application/json"],
+        "produces": [
+          "application/json"
+        ],
         "parameters": [
           {
             "name": "id",
