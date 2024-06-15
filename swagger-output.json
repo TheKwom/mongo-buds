@@ -5,7 +5,7 @@
     "description": "Food reviews",
     "version": "1.0.0"
   },
-  "host": "cse341-spring24-uwqp.onrender.com",
+  "host": "https://mongo-buds.onrender.com",
   "basePath": "/",
   "schemes": ["https"],
   "paths": {
