@@ -7,9 +7,7 @@
   },
   "host": "cse341-spring24-uwqp.onrender.com",
   "basePath": "/",
-  "schemes": [
-    "https"
-  ],
+  "schemes": ["https"],
   "paths": {
     "/api-docs": {
       "get": {
@@ -23,10 +21,9 @@
     },
     "/reviews/": {
       "get": {
-        "description": "",
-        "produces": [
-          "application/json"
-        ],
+        "description": "Will GET all user reviews",
+        "operationId": "getReviews",
+        "produces": ["application/json"],
         "responses": {
           "200": {
             "description": "OK"
@@ -86,6 +83,7 @@
     "/reviews/{id}": {
       "get": {
         "description": "",
+        "produces": ["application/json"],
         "parameters": [
           {
             "name": "id",
@@ -95,13 +93,11 @@
           }
         ],
         "responses": {
-          "default": {
-            "description": ""
+          "200": {
+            "description": "OK"
           }
         }
-      }
-    },
-    "/reviews./{id}": {
+      },
       "put": {
         "description": "",
         "parameters": [
@@ -110,29 +106,63 @@
             "in": "path",
             "required": true,
             "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "menu_item": {
+                  "example": "any"
+                },
+                "image": {
+                  "example": "any"
+                },
+                "review_text": {
+                  "example": "any"
+                },
+                "restaurant_name": {
+                  "example": "any"
+                },
+                "restaurant_city": {
+                  "example": "any"
+                },
+                "restaurant_state": {
+                  "example": "any"
+                },
+                "rating": {
+                  "example": "any"
+                }
+              }
+            }
           }
         ],
         "responses": {
-          "default": {
-            "description": ""
+          "204": {
+            "description": "No Content"
+          },
+          "500": {
+            "description": "Internal Server Error"
           }
         }
-      }
-    },
-    "/reviews./{review_id}": {
+      },
       "delete": {
         "description": "",
         "parameters": [
           {
-            "name": "review_id",
+            "name": "id",
             "in": "path",
             "required": true,
             "type": "string"
           }
         ],
         "responses": {
-          "default": {
-            "description": ""
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
           }
         }
       }
