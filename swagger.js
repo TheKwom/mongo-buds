@@ -5,7 +5,7 @@ const doc = {
     title: "Reviews",
     description: "Food reviews",
   },
-  host: "cse341-spring24-uwqp.onrender.com",
+  host: "mongo-buds.onrender.com",
   schemes: ["https"],
 };
 console.log(doc);
